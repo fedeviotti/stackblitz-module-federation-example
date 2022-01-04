@@ -1,8 +1,5 @@
 import * as React from 'react';
-
-interface FilterProps {
-    project: string;
-}
+import {FilterProps} from "../shared/types/";
 
 const Filter: React.FC<FilterProps> = ({project}) => {
     return (<div style={{
