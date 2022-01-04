@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     static: path.join(__dirname, 'dist'),
-    port: 3002,
+    port: 3003,
   },
   output: {
     publicPath: 'auto',
@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     // To learn more about the usage of this plugin, please visit https://webpack.js.org/plugins/module-federation-plugin/
     new ModuleFederationPlugin({
-      name: 'app2',
+      name: 'app3',
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/App',

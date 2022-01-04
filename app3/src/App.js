@@ -8,9 +8,9 @@ const App = () => {
       margin: "10px",
       padding:"10px",
       textAlign:"center",
-      backgroundColor:"cyan"
+      backgroundColor:"darkred"
     }}>
-      <h1 >App 2</h1>
+      <h1 >App 3</h1>
         <Suspense fallback={"loading..."}>
             <RemoteFilter1/>
         </Suspense>
