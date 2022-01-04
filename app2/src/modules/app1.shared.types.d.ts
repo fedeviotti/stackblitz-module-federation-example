@@ -1,1 +1,1 @@
-declare module 'app1/Filter';
+declare module 'app1/shared/types';
