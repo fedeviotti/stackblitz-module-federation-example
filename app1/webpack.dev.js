@@ -16,6 +16,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
@@ -25,6 +30,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: "app1",
@@ -33,8 +41,8 @@ module.exports = {
         './Filter': './src/Filter',
       },
       remotes: {
-        app2: "app2@[app2Url]/remoteEntry.js",
-        app3: "app3@[app3Url]/remoteEntry.js",
+        app2: "app2@http://localhost:3002/remoteEntry.js",
+        app3: "app3@http://localhost:3003/remoteEntry.js",
       },
       shared: {react: {singleton: true}, "react-dom": {singleton: true}},
     }),

@@ -7,13 +7,18 @@ module.exports = {
   mode: 'development',
   devServer: {
     static: path.join(__dirname, 'dist'),
-    port: 3003,
+    port: 3002,
   },
   output: {
     publicPath: 'auto',
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
@@ -24,16 +29,19 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   plugins: [
     // To learn more about the usage of this plugin, please visit https://webpack.js.org/plugins/module-federation-plugin/
     new ModuleFederationPlugin({
-      name: 'app3',
+      name: 'app2',
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/App',
       },
       remotes: {
-        app1: "app1@[app1Url]/remoteEntry.js",
+        app1: "app1@http://localhost:3001/remoteEntry.js",
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
