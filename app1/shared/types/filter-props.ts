@@ -1,3 +1,3 @@
 export interface FilterProps {
-    project: string;
+    projectName: string;
 }

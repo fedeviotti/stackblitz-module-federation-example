@@ -13,7 +13,7 @@ const App = () => {
     }}>
       <h1 >App 3</h1>
         <React.Suspense fallback={"loading..."}>
-            <RemoteFilter1 project="App 3"/>
+            <RemoteFilter1 projectName="App 3"/>
         </React.Suspense>
     </div>
   )
