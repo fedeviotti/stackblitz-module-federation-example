@@ -41,8 +41,8 @@ module.exports = {
         './Filter': './src/Filter',
       },
       remotes: {
-        app2: "app2@[app2Url]/remoteEntry.js",
-        app3: "app3@[app3Url]/remoteEntry.js",
+        app2: "app2@http://localhost:3002/remoteEntry.js",
+        app3: "app3@http://localhost:3003/remoteEntry.js",
       },
       shared: {react: {singleton: true}, "react-dom": {singleton: true}},
     }),
