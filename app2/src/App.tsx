@@ -1,5 +1,5 @@
 import * as React from "react";
-import {FilterProps} from "shared/types";
+import {FilterProps} from "app1/shared/types";
 
 const RemoteFilter1: React.FC<FilterProps> = React.lazy(() => import("app1/Filter"));
 
