@@ -1,3 +1,5 @@
-# github-pq3qpg-ywsfks
+A project with three apps, they are federated modules with webpack 5
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/github-pq3qpg-ywsfks)
+app1: host, expose Filter component and consume app2 and app3
+app2: remote, consume Filter component
+app3: remote consume Filter component
